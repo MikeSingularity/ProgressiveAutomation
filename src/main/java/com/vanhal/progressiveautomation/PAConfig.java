@@ -52,7 +52,10 @@ public class PAConfig {
 	public static boolean shearTrees;
 	public static boolean allowInventoryOverflow;
 	public static boolean pauseOnFullInventory;
+	public static boolean witherToolsUnbreakable;
+	public static boolean unbreakingXInvulnerable;
 	public static int maxRangeUpgrades;
+
 	
 	//machine levels
 	public static int woodLevel;
@@ -111,6 +114,9 @@ public class PAConfig {
 		shearTrees = config.getBoolean("shearTrees", "general", true, "Allow the chopper to take a shearing upgrade in order to have a sheer to shear leaves");
 		allowInventoryOverflow = config.getBoolean("allowInventoryOverflow", "general", true, "Drop items on the ground if machine's inventory is full, setting this to false will destroy overflow items.");
 		pauseOnFullInventory = config.getBoolean("pauseOnFullInventory",  "general",  false, "Pause machines when the are no open slots in their inventory.");
+		witherToolsUnbreakable = config.getBoolean("witherToolsUnbreakable", "general", false, "Make tools from wither materials unbreakable. This setting will not effect tools made before enabled and tools made while enabled will still be unbreakable if disabled.");
+		unbreakingXInvulnerable = config.getBoolean("unbreakingXInvulnerable", "general", false, "Items with the Unbreaking X enchantment will not lose durability in machines");
+		
 
 		
 		//enable blocks		

@@ -1,5 +1,7 @@
 package com.vanhal.progressiveautomation.items.tools;
 
+import com.vanhal.progressiveautomation.PAConfig;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.InventoryCrafting;
@@ -24,6 +26,8 @@ public class RecipeWitherTool extends ShapedOreRecipe {
     	ItemStack result = output.copy();
     	result.addEnchantment(Enchantments.UNBREAKING, 10);
     	result.setStackDisplayName("Withered "+result.getDisplayName());
+    	if (PAConfig.witherToolsUnbreakable)
+    		result.getTagCompound().setBoolean("Unbreakable", true);
     	return result; 
     }
 	
@@ -32,6 +36,8 @@ public class RecipeWitherTool extends ShapedOreRecipe {
     	ItemStack result = output.copy();
     	result.addEnchantment(Enchantments.UNBREAKING, 10);
     	result.setStackDisplayName("Withered "+result.getDisplayName());
+    	if (PAConfig.witherToolsUnbreakable)
+    		result.getTagCompound().setBoolean("Unbreakable", true);
     	return result; 
     }
 

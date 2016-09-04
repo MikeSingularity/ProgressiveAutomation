@@ -3,11 +3,14 @@ package com.vanhal.progressiveautomation.ref;
 import java.util.Random;
 import java.util.Set;
 
+import com.vanhal.progressiveautomation.PAConfig;
 import com.vanhal.progressiveautomation.items.PAItems;
 import com.vanhal.progressiveautomation.util.PlayerFake;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.init.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
@@ -200,14 +203,18 @@ public class ToolHelper {
 	public static boolean damageTool(ItemStack tool, World world, int x, int y, int z) {
 		if ( (tool.getItem() instanceof ItemShears) || (tool.getItem() instanceof ItemTool) || 
 				(tool.getItem() instanceof ItemHoe) || (tool.getItem() instanceof ItemSword) ) {
-			if (tool.attemptDamageItem(1, RND)) {
-				return true;
+			if (PAConfig.unbreakingXInvulnerable && EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, tool) == 10) {
+				return false;
 			}
+			return tool.attemptDamageItem(1, RND);
 		} else {
 			Block mineBlock = world.getBlockState(new BlockPos(x, y, z)).getBlock();
 			PlayerFake fakePlayer = new PlayerFake((WorldServer)world);
 			if (tinkersType(tool.getItem())==TYPE_HOE) {
-				tool.attemptDamageItem(1, RND);
+				if (PAConfig.unbreakingXInvulnerable && EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, tool) == 10) {
+					return false;
+				}
+				return tool.attemptDamageItem(1, RND);
 			} else {
 				tool.getItem().onBlockDestroyed(tool, world, mineBlock.getDefaultState(), new BlockPos(x, y, z), fakePlayer);
 			}
