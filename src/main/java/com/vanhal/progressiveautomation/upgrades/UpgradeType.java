@@ -20,7 +20,8 @@ public enum UpgradeType {
 	FILTER_ADULT,
 	FILTER_PLAYER,
 	MILKER,
-	SHEARING;
+	SHEARING,
+	QUARRY;
 
 	/**
 	 * Helper method for retrieving the proper range upgrade given the machineLevel

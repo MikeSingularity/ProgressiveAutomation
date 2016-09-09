@@ -5,6 +5,7 @@ import com.vanhal.progressiveautomation.items.tools.WitherTools;
 import com.vanhal.progressiveautomation.items.upgrades.ItemCobbleGenUpgrade;
 import com.vanhal.progressiveautomation.items.upgrades.ItemDiamondUpgrade;
 import com.vanhal.progressiveautomation.items.upgrades.ItemFillerUpgrade;
+import com.vanhal.progressiveautomation.items.upgrades.ItemQuarryUpgrade;
 import com.vanhal.progressiveautomation.items.upgrades.ItemFilterAdultUpgrade;
 import com.vanhal.progressiveautomation.items.upgrades.ItemFilterAnimalUpgrade;
 import com.vanhal.progressiveautomation.items.upgrades.ItemFilterMobUpgrade;
@@ -38,6 +39,7 @@ public class PAItems {
 		if (PAConfig.allowDiamondLevel) diamondUpgrade = new ItemDiamondUpgrade();
 		if ((PAConfig.allowCobbleUpgrade) && (PAConfig.minerEnabled)) cobbleUpgrade = new ItemCobbleGenUpgrade();
 		if ((PAConfig.allowFillerUpgrade) && (PAConfig.minerEnabled)) fillerUpgrade = new ItemFillerUpgrade();
+		if ((PAConfig.allowQuarryUpgrade) && (PAConfig.minerEnabled)) quarryUpgrade = new ItemQuarryUpgrade();
 		if (PAConfig.allowWitherUpgrade) witherUpgrade = new ItemWitherUpgrade();
 		
 		if (PAConfig.killerEnabled) {
@@ -80,6 +82,7 @@ public class PAItems {
 		
 		if (witherUpgrade!=null) witherUpgrade.preInit();
 		if (fillerUpgrade!=null) fillerUpgrade.preInit();
+		if (quarryUpgrade!=null) quarryUpgrade.preInit();
 		
 		if (filterPlayerUpgrade!=null) filterPlayerUpgrade.preInit();
 		if (filterMobUpgrade!=null) filterMobUpgrade.preInit();
@@ -115,6 +118,7 @@ public class PAItems {
 			if (witherUpgrade!=null) witherUpgrade.init();
 			if (cobbleUpgrade!=null) cobbleUpgrade.init();
 			if (fillerUpgrade!=null) fillerUpgrade.init();
+			if (quarryUpgrade!=null) quarryUpgrade.init();
 			if (milkerUpgrade!=null) milkerUpgrade.init();
 			if (shearingUpgrade!=null) shearingUpgrade.init();
 			
@@ -151,6 +155,7 @@ public class PAItems {
 	public static ItemCobbleGenUpgrade cobbleUpgrade = null;
 	public static ItemWitherUpgrade witherUpgrade = null;
 	public static ItemFillerUpgrade fillerUpgrade = null;
+	public static ItemQuarryUpgrade quarryUpgrade = null;
 	public static ItemMilkerUpgrade milkerUpgrade = null;
 	public static ItemShearingUpgrade shearingUpgrade = null;
 	

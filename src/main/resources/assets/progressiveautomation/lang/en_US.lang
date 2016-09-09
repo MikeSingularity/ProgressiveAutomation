@@ -40,6 +40,7 @@ item.DiamondUpgrade.name=Diamond Upgrade
 item.CobbleUpgrade.name=Cobble Gen Upgrade
 item.WitherUpgrade.name=Wither Upgrade
 item.FillerUpgrade.name=Filler Upgrade
+item.QuarryUpgrade.name=Quarry Upgrade
 
 item.FilterAdultUpgrade.name=Adult Filter Upgrade
 item.FilterAnimalUpgrade.name=Animal Filter Upgrade

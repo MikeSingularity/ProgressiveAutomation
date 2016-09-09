@@ -33,6 +33,7 @@ public class PAConfig {
 	public static boolean allowFillerUpgrade;
 	public static boolean allowWitherUpgrade;
 	public static int witherMultiplier;
+	public static boolean allowQuarryUpgrade;
 	
 	//killer kills players?
 	public static boolean allowKillPlayer;
@@ -139,6 +140,7 @@ public class PAConfig {
 		allowShearingUpgrade = config.getBoolean("shearing", "upgrades", true, "Allow the shearing upgrade (requires restart)");
 		allowMilkerUpgrade = config.getBoolean("milker", "upgrades", true, "Allow the milker upgrade (requires restart)");
 		witherMultiplier = config.getInt("witherMultiplier", "upgrades", 4, 2, 10, "How much the wither upgrade extends the machines. (How much multiplies the upgrades by)");
+		allowQuarryUpgrade = config.getBoolean("quarry", "upgrades", true, "Allow the quarry upgrade (requires restart)");
 		
 		allowKillPlayer = config.getBoolean("killPlayer", "upgrades", true, "Allow the Killer to kill players");
 		
