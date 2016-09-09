@@ -475,7 +475,7 @@ public class TileMiner extends UpgradeableTileEntity {
 			return null;
 
 		BlockPos newPos = spiralPos( currentRange, currentY );
-		String log = "Range: "+currentRange+", currentY: "+currentY;
+		// String log = "Range: "+currentRange+", currentY: "+currentY;
 		
 		// The quarry uses different logic
 		if (hasUpgrade(UpgradeType.QUARRY)) {
@@ -498,7 +498,7 @@ public class TileMiner extends UpgradeableTileEntity {
 			}
 		}
 		
-		ProgressiveAutomation.logger.info(log+(quarryFillPass?" (quarry)":""));
+		//ProgressiveAutomation.logger.info(log+(quarryFillPass?" (quarry)":""));
 		return newPos;
 	}
 
